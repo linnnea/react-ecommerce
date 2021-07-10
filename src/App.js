@@ -1,8 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { CssBaseline } from '@material-ui/core';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	useLocation,
+	withRouter,
+} from 'react-router-dom';
 
-import { Navbar, Products, Cart, Checkout } from './components';
+import {
+	Navbar,
+	Products,
+	Cart,
+	Checkout,
+	Hero,
+	Marquee,
+	Footer,
+	Sections,
+	OurStory,
+	ContactUs,
+} from './components';
 import { commerce } from './lib/commerce';
 
 const App = () => {
@@ -74,40 +91,64 @@ const App = () => {
 
 	const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
+	function _ScrollToTop(props) {
+		const { pathname } = useLocation();
+		useEffect(() => {
+			window.scrollTo(0, 0);
+		}, [pathname]);
+		return props.children;
+	}
+
+	const ScrollToTop = withRouter(_ScrollToTop);
+
 	return (
 		<Router>
-			<div style={{ display: 'flex' }}>
-				<CssBaseline />
-				<Navbar
-					totalItems={cart.total_items}
-					handleDrawerToggle={handleDrawerToggle}
-				/>
-				<Switch>
-					<Route exact path="/">
-						<Products
-							products={products}
-							onAddToCart={handleAddToCart}
-							handleUpdateCartQty
-						/>
-					</Route>
-					<Route exact path="/cart">
-						<Cart
-							cart={cart}
-							onUpdateCartQty={handleUpdateCartQty}
-							onRemoveFromCart={handleRemoveFromCart}
-							onEmptyCart={handleEmptyCart}
-						/>
-					</Route>
-					<Route path="/checkout" exact>
-						<Checkout
-							cart={cart}
-							order={order}
-							onCaptureCheckout={handleCaptureCheckout}
-							error={errorMessage}
-						/>
-					</Route>
-				</Switch>
-			</div>
+			<ScrollToTop>
+				<div style={{ display: 'flex', flexDirection: 'column' }}>
+					<CssBaseline />
+					<Navbar
+						totalItems={cart.total_items}
+						handleDrawerToggle={handleDrawerToggle}
+					/>
+					<Marquee />
+					<Switch>
+						<Route exact path="/">
+							<Hero />
+							<Sections />
+						</Route>
+						<Route exact path="/products">
+							<Products
+								products={products}
+								onAddToCart={handleAddToCart}
+								handleUpdateCartQty
+							/>
+						</Route>
+						<Route exact path="/cart">
+							<Cart
+								cart={cart}
+								onUpdateCartQty={handleUpdateCartQty}
+								onRemoveFromCart={handleRemoveFromCart}
+								onEmptyCart={handleEmptyCart}
+							/>
+						</Route>
+						<Route path="/checkout" exact>
+							<Checkout
+								cart={cart}
+								order={order}
+								onCaptureCheckout={handleCaptureCheckout}
+								error={errorMessage}
+							/>
+						</Route>
+						<Route path="/our-story" exact>
+							<OurStory />
+						</Route>
+						<Route path="/contact-us" exact>
+							<ContactUs />
+						</Route>
+					</Switch>
+					<Footer />
+				</div>
+			</ScrollToTop>
 		</Router>
 	);
 };

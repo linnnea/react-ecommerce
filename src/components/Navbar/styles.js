@@ -3,22 +3,30 @@ import { makeStyles, fade } from '@material-ui/core/styles';
 const drawerWidth = 0;
 
 export default makeStyles((theme) => ({
-	appBar: {
+	indexPage: {
+		backgroundColor: 'transparent',
 		boxShadow: 'none',
-		borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
+		color: '#fff',
+	},
+	appBar: {
+		backgroundColor: '#fff',
+		color: '#000',
+		boxShadow: 'none',
 		[theme.breakpoints.up('sm')]: {
 			width: `calc(100% - ${drawerWidth}px)`,
 			marginLeft: drawerWidth,
 		},
 	},
 	title: {
+		display: 'flex',
 		flexGrow: 1,
 		alignItems: 'center',
-		display: 'flex',
 		textDecoration: 'none',
 	},
-	image: {
-		marginRight: '10px',
+	logo: {
+		marginRight: 10,
+		width: 100,
+		height: 60,
 	},
 	menuButton: {
 		marginRight: theme.spacing(2),
@@ -64,5 +72,57 @@ export default makeStyles((theme) => ({
 		[theme.breakpoints.up('md')]: {
 			width: '20ch',
 		},
+	},
+	navLinks: {
+		display: 'flex',
+		justifyContent: 'space-between',
+		margin: [[10, 18, 0, 18]],
+		'@media only screen and (min-width: 768px)': {
+			position: 'absolute',
+			top: 15,
+			left: '50%',
+			transform: 'translateX(-50%)',
+			width: 400,
+		},
+	},
+	link: {
+		fontFamily: 'Montserrat Semibold',
+		fontSize: '.9rem',
+		textDecoration: 'none',
+		'&:hover': {
+			textDecoration: 'underline',
+		},
+		'&:focus': {
+			textDecoration: 'underline',
+		},
+		'@media only screen and (min-width: 768px)': {
+			position: 'relative',
+			top: 15,
+		},
+	},
+	linkWhite: {
+		color: '#fff',
+	},
+	linkBlack: {
+		color: '#000',
+	},
+	shoppingCartIcon: {
+		position: 'relative',
+		bottom: -5,
+		width: 30,
+		height: 30,
+	},
+	shoppingCartIconWhite: {
+		fill: '#fff',
+	},
+	shoppingCartIconBlack: {
+		fill: '#000',
+	},
+	badge: {
+		top: 5,
+		minWidth: 16,
+		height: 16,
+		padding: 0,
+		fontSize: '0.5rem',
 	},
 }));

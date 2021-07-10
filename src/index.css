@@ -1,0 +1,26 @@
+@font-face {
+	font-family: 'OPTIVenus';
+	src: local('OPTIVenusBold'),
+		url('./assets/fonts/OPTIVenus-BoldExtended.otf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat SemiBold';
+	src: local('MontserratSemibold'),
+		url('./assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'Montserrat Medium';
+	src: local('MontserratMedium'),
+		url('./assets/fonts/Montserrat-Medium.ttf') format('truetype');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'Montserrat Regular';
+	src: local('MontserratRegular'),
+		url('./assets/fonts/Montserrat-Regular.ttf') format('truetype');
+	font-weight: 400;
+}

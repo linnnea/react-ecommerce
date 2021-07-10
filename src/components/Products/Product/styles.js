@@ -3,17 +3,37 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles(() => ({
 	root: {
 		maxWidth: '100%',
+		padding: 0,
+		backgroundColor: '#EFEFEF',
+		boxShadow: 'none',
+		marginTop: 25,
 	},
 	media: {
-		height: 0,
-		paddingTop: '56.25%', // 16:9
+		paddingTop: '75%',
+		margin: [[20, 0]],
+		backgroundSize: 'contain',
 	},
-	cardActions: {
+	button: {
 		display: 'flex',
-		justifyContent: 'flex-end',
+		justifyContent: 'center',
+		marginTop: 15,
+		border: '2px solid #000',
+		color: '#000',
+		borderRadius: 0,
+		fontFamily: 'Montserrat Semibold',
+		fontSize: '.8rem',
+		textTransform: 'inherit',
+		height: 55,
+		width: '100%',
+		'&:hover': {
+			backgroundColor: '#000',
+			color: '#fff',
+			border: 'none',
+		},
 	},
 	cardContent: {
 		display: 'flex',
-		justifyContent: 'space-between',
+		flexDirection: 'column',
+		textAlign: 'center',
 	},
 }));

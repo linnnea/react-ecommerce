@@ -8,11 +8,14 @@ import {
 	Menu,
 	Typography,
 } from '@material-ui/core';
-import { ShoppingCart } from '@material-ui/icons';
+import { ReactComponent as ShoppingCart } from '../../assets/noun_Shopping Bag_159084.svg';
+import { ReactComponent as LogoIcon } from '../../assets/urskog-logo.svg';
+import { ReactComponent as LogoIconWhite } from '../../assets/urskog-logo-white.svg';
 import { Link, useLocation } from 'react-router-dom';
 
-import logo from '../../assets/urskog-logo.png';
 import useStyles from './styles';
+import OurStory from '../OurStory/OurStory';
+import ContactUs from '../ContactUs/ContactUs';
 
 const Navbar = ({ totalItems }) => {
 	const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -42,7 +45,11 @@ const Navbar = ({ totalItems }) => {
 					aria-label="Show cart items"
 					color="inherit"
 				>
-					<Badge badgeContent={totalItems} color="secondary">
+					<Badge
+						badgeContent={totalItems}
+						color="secondary"
+						classes={{ badge: classes.badge }}
+					>
 						<ShoppingCart />
 					</Badge>
 				</IconButton>
@@ -53,8 +60,14 @@ const Navbar = ({ totalItems }) => {
 
 	return (
 		<>
-			<AppBar position="fixed" className={classes.appBar} color="inherit">
-				<Toolbar>
+			<AppBar
+				position="absolute"
+				className={
+					location.pathname === '/' ? classes.indexPage : classes.appBar
+				}
+				color="inherit"
+			>
+				<Toolbar style={{ top: 15 }}>
 					<Typography
 						component={Link}
 						to="/"
@@ -62,29 +75,71 @@ const Navbar = ({ totalItems }) => {
 						className={classes.title}
 						color="inherit"
 					>
-						<img
-							src={logo}
-							alt="commerce.js"
-							height="25px"
-							className={classes.image}
-						/>{' '}
+						{location.pathname === '/' ? (
+							<LogoIconWhite className={classes.logo} />
+						) : (
+							<LogoIcon className={classes.logo} />
+						)}
 					</Typography>
 					<div className={classes.grow} />
-					{location.pathname === '/' && (
-						<div className={classes.button}>
-							<IconButton
-								component={Link}
-								to="/cart"
-								aria-label="Show cart items"
-								color="inherit"
+					<div
+						className={classes.button}
+						style={{ backgroundColor: 'transparent' }}
+					>
+						<IconButton
+							component={Link}
+							to="/cart"
+							aria-label="Show cart items"
+							color="inherit"
+						>
+							<Badge
+								badgeContent={totalItems}
+								color="secondary"
+								classes={{ badge: classes.badge }}
 							>
-								<Badge badgeContent={totalItems} color="secondary">
-									<ShoppingCart />
-								</Badge>
-							</IconButton>
-						</div>
-					)}
+								<ShoppingCart
+									className={
+										location.pathname === '/'
+											? `${classes.shoppingCartIcon} ${classes.shoppingCartIconWhite}`
+											: `${classes.shoppingCartIcon} ${classes.shoppingCartIconBlack}`
+									}
+								/>
+							</Badge>
+						</IconButton>
+					</div>
 				</Toolbar>
+				<Typography className={classes.navLinks}>
+					<Link
+						to="/products"
+						className={
+							location.pathname === '/'
+								? `${classes.link} ${classes.linkWhite}`
+								: `${classes.link} ${classes.linkBlack}`
+						}
+					>
+						Skateboards
+					</Link>
+					<Link
+						to="/our-story"
+						className={
+							location.pathname === '/'
+								? `${classes.link} ${classes.linkWhite}`
+								: `${classes.link} ${classes.linkBlack}`
+						}
+					>
+						Our story
+					</Link>
+					<Link
+						to="/contact-us"
+						className={
+							location.pathname === '/'
+								? `${classes.link} ${classes.linkWhite}`
+								: `${classes.link} ${classes.linkBlack}`
+						}
+					>
+						Contact us
+					</Link>
+				</Typography>
 			</AppBar>
 			{renderMobileMenu}
 		</>

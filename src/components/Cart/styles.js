@@ -6,7 +6,7 @@ export default makeStyles((theme) => ({
 		flexDirection: 'column',
 		justifyContent: 'center',
 		marginTop: '1em',
-		height: 710,
+		minHeight: 710,
 		'@media only screen and (min-width: 768px)': {
 			justifyContent: 'initial',
 		},

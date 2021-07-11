@@ -14,8 +14,6 @@ import { ReactComponent as LogoIconWhite } from '../../assets/urskog-logo-white.
 import { Link, useLocation } from 'react-router-dom';
 
 import useStyles from './styles';
-import OurStory from '../OurStory/OurStory';
-import ContactUs from '../ContactUs/ContactUs';
 
 const Navbar = ({ totalItems }) => {
 	const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);

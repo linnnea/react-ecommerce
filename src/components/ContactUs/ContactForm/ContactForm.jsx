@@ -9,14 +9,12 @@ const ContactForm = () => {
 			<TextField
 				label="Name"
 				className={classes.textField}
-				disableUnderline={true}
 				fullWidth={true}
 				required={true}
 			/>
 			<TextField
 				label="Email"
 				className={classes.textField}
-				disableUnderline={true}
 				fullWidth={true}
 				required={true}
 			/>
@@ -24,7 +22,6 @@ const ContactForm = () => {
 				label="Message"
 				className={classes.textField}
 				multiline={true}
-				disableUnderline={true}
 				fullWidth={true}
 				required={true}
 			/>

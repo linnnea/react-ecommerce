@@ -3,7 +3,7 @@
 This project is a tribute to the great skateboard brand Urskog.
 Built the e-commerce website in Reactjs, CommerceJS API and also built-in Stripe payments.
 
-See project 👉 [here](https://github.com/facebook/create-react-app).
+See project 👉  [here](https://react-ecommerce-rouge.vercel.app/).
 
 ## Setup
 

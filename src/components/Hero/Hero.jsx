@@ -29,12 +29,14 @@ const Hero = () => {
 					<div className={classes.buttons}>
 						<Button
 							type="button"
+							href="/our-story"
 							className={`${classes.button} ${classes.secondaryBtn}`}
 						>
-							Lorem ipsum
+							Our story
 						</Button>
 						<Button
 							type="button"
+							href="/products"
 							className={`${classes.button} ${classes.primaryBtn}`}
 						>
 							Shop online

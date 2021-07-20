@@ -1,4 +1,4 @@
-# E-commerce application with Reactjs, CommerceJS API and Stripe payments
+# E-commerce application with Reactjs, Material UI, CommerceJS API and Stripe payments
 
 This project is a tribute to the great skateboard brand Urskog.
 Built the e-commerce website in Reactjs, CommerceJS API and also built-in Stripe payments.

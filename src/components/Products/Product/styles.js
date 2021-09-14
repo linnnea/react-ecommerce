@@ -23,7 +23,7 @@ export default makeStyles(() => ({
 		fontFamily: 'Montserrat Semibold',
 		fontSize: '.8rem',
 		textTransform: 'inherit',
-		height: 55,
+		height: 40,
 		width: '100%',
 		'&:hover': {
 			backgroundColor: '#000',

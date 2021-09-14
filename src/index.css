@@ -1,3 +1,6 @@
+body {
+	background-color: #fff !important;
+}
 @font-face {
 	font-family: 'OPTIVenus';
 	src: local('OPTIVenusBold'),

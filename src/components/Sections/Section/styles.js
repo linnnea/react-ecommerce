@@ -26,11 +26,11 @@ export default makeStyles((theme) => ({
 		display: 'flex',
 		justifyContent: 'center',
 		margin: [[10, 0]],
-		height: 55,
+		height: 40,
 		width: 200,
 		borderRadius: 0,
 		fontFamily: 'Montserrat Medium',
-		fontSize: '.9rem',
+		fontSize: '.8rem',
 		textTransform: 'inherit',
 		'&:hover': {
 			backgroundColor: '#313131',

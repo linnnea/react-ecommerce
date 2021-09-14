@@ -24,6 +24,7 @@ export default makeStyles((theme) => ({
 		padding: 0,
 		'&:hover': {
 			textDecoration: 'underline',
+			backgroundColor: 'transparent',
 		},
 	},
 	listItemText: {

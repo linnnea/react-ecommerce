@@ -58,7 +58,7 @@ const Footer = () => {
 							Customer service
 						</Typography>
 						<List className={classes.list}>
-							<ListItemLink className={classes.listItemLink}>
+							<ListItemLink className={classes.listItemLink} href="/contact-us">
 								<ListItemText
 									className={classes.listItemText}
 									primary="Contact us"
